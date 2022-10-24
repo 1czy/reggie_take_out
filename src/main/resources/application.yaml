@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: reggie_take_out
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/db_reggie?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+mybatis-plus:
+  type-aliases-package: com.cctv.entity # 别名扫描包
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+reggie:
+  ##图片存储路径
+  path: D:/image/
