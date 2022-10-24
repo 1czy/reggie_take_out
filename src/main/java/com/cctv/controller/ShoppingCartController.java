@@ -27,6 +27,7 @@ public class ShoppingCartController {
     @PostMapping("/add")
     public R<ShoppingCart> add(@RequestBody ShoppingCart shoppingCart){
         log.info("shoppingCart is {}",shoppingCart);
+        log.info(" main shoppingCart is {}",shoppingCart);
         //获取当前用户用户id
         Long id = BaseContext.getCurrentId();
         //查询shoppingCart 表 where user_id =id and dish_flavor = shoppingCart.getDishFlavor;
